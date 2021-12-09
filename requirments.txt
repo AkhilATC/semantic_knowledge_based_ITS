@@ -1,0 +1,3 @@
+Owlready2==0.35
+pymemcache==3.5.0
+
