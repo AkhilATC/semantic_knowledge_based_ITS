@@ -29,15 +29,16 @@ class OwlCustomParser:
         else:
             HistoryManager.store_cache(self.app_store)
 
-    def initiate_chat(self,instance_name):
-        root_instance = f"{self.base_uri}{instance_name}"
+    def initiate_chat(self):
+        root_instance = f"{self.base_uri}{'IMP_Geometry'}"
         prop_name = f"{self.base_uri}is_defined_as"
         query = "SELECT ?value  " \
                 + "WHERE { <" + root_instance + "> a owl:NamedIndividual ." \
                 + "<"+prop_name+"> a owl:DatatypeProperty ." \
                 + " <" + root_instance + ">  <"+prop_name+"> ?value}"
         value = default_world.sparql(query)
-        return [x[0] for x in value][0]
+        value = [x[0] for x in value][0]
+        return f"{value} <br> Here i found some data :<button class='start-button' onclick='settingUp()'>Start</button>"
 
 
     def check_node_type(fun_):

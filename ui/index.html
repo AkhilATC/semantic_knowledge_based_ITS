@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Semantic knowledge driven ITS 🤖</title>
-    <script ype="text/javascript" src='eel.js'></script>
-    <script ype="text/javascript" src='ui_op.js'></script>
+    <script type="text/javascript" src='eel.js'></script>
+    <script type="text/javascript" src='ui_op.js'></script>
 
 
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
+<div class="notification">
+    <p id="notifID">✋ Semantic knowledge driven ITS 🤖</p>
+</div>
 <div class="start-container" id="start-panel">
      <p> I'm a topic specified intelligent tutor: you can start learning geometry.</p>
-    <button class="start-button" onclick="settingUp('IMP_Geometry')">Start</button>
+    <button class="start-button" onclick="settingUp()">Start</button>
 </div>
 <div class="container" id="head-panel">
 
     <div class = "white-bord">
-        <div  class="scroll-content"><p id="display"></p> </div>
+<!--        <div  class="scroll-content"><p id="display"></p> </div>-->
+        <p id="display"></p>
         <div class="topic_suggestion"> </div>
 
     </div>
