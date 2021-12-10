@@ -103,7 +103,7 @@ class OwlCustomParser:
             data = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in data]
             # print(data)
             value = value + construct_html_data(data, 'feature')
-            HistoryManager.store_cache(self.app_store, data={'history': {'concept': 'Geometry' }})
+            HistoryManager.store_cache(self.app_store, data={"concept": "Geometry"})
             return {'status': True, 'message': "Please note down...📝", 'data': value}
         except Exception as e:
             print(e)
