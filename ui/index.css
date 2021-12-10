@@ -58,5 +58,18 @@ div.scroll-content {
   cursor: pointer;
   border-radius: 15px;
 }
+.topic-button{
+  background-color: #FF7F50; /* lime */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 6px 3px;
+  cursor: pointer;
+  border-radius: 15px;
+}
 
 

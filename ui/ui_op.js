@@ -1,5 +1,6 @@
 
 function settingUp(){
+    notification("Fetching.....!")
     eel.init_session()(call_Back)
     start_panel = document.getElementById("start-panel")
     head_panel = document.getElementById("head-panel")
@@ -18,7 +19,9 @@ function call_Back(output){
 
 }
 function parseInfo(nodeInfo){
+    notification('Checking ...');
     console.log("got data here---"+nodeInfo);
+    eel.fetch_info(nodeInfo)(call_Back)
 }
 
 function notification(msg){

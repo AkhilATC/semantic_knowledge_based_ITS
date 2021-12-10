@@ -8,7 +8,15 @@ def init_session():
     print("----- in init --")
     parser = CoreParser()
     output = parser.initiate_chat()
-    print(output)
+    # print(output)
+    return output
+
+
+@eel.expose
+def fetch_info(node):
+    print("----- in init --")
+    parser = CoreParser()
+    output = parser.construct_query(node)
     return output
 
 eel.init("ui")

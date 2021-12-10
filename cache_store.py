@@ -12,10 +12,11 @@ class HistoryManager:
         base_store.set('history', data)
 
     @staticmethod
-    def store_specfic(base_store,key,inner):
+    def store_specfic(base_store, key, inner):
         data = base_store.get('history')
+        print(f"Cahed data -- {data}{}")
         data[key] = inner
-        base_store.set('history',data)
+        base_store.set('history', data)
 
     @staticmethod
     def get_store_cache(base_store, key=None):

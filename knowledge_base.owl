@@ -72,10 +72,37 @@
     
 
 
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Euclidean_geometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Euclidean_geometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#Geometry"/>
+        <nodeInfo xml:lang="en">Euclidean geometry</nodeInfo>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Geometry -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Geometry">
         <nodeInfo xml:lang="en">Geometry</nodeInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#Geometry"/>
+        <nodeInfo xml:lang="en">2-D Geometry</nodeInfo>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#Geometry"/>
+        <nodeInfo xml:lang="en">3-D Geometry</nodeInfo>
     </owl:Class>
     
 
@@ -91,6 +118,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_2D_Geometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_2D_Geometry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;p&gt;
+A polygon is a closed, 2-dimensional shape, with edges(sides) are straight lines. The word “polygon” is derived from Greek for “many angles”. The names of the polygons are taken from the Greek number prefixes followed by –gon, with only a couple exceptions.
+&lt;/p&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">2-D Geometry</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_3D_Geometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_3D_Geometry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <nodeInfo xml:lang="en">3-D Geometry</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_Euclidean_geometry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_Euclidean_geometry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#Euclidean_geometry"/>
+        <is_defined_as xml:lang="en">&lt;p&gt;
+Euclidean geometry, sometimes called parabolic geometry, is a geometry that follows a set of propositions that are based on Euclid&apos;s five postulates. There are two types of Euclidean geometry: plane geometry, which is two-dimensional Euclidean geometry, and solid geometry, which is three-dimensional Euclidean geometry.
+&lt;/p&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Euclidean geometry</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_Geometry -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_Geometry">
@@ -98,9 +158,9 @@
         <Important_concepts xml:lang="en">The basic geometrical concepts are dependent on three basic concepts. They are the point, line and plane. We cannot precisely define the terms. But, it refers to the mark of the position and has an accurate location.
 
 &lt;a href=&quot; https://en.wikipedia.org/wiki/Geometry#Important_concepts_in_geometry&quot; target=&quot;_blank&quot;&gt;Refer more&lt;/a&gt;</Important_concepts>
-        <is_defined_as xml:lang="en">&lt;p&gt;Geometry (from the Ancient Greek: γεωμετρία; geo- &quot;earth&quot;, -metron &quot;measurement&quot;) is, with arithmetic, one of the oldest branches of mathematics. It is concerned with properties of space that are related with distance, shape, size, and relative position of figures.[1] A mathematician who works in the field of geometry is called a geometer.&lt;/p&gt;
-&lt;br&gt;
-&lt;img alt=&quot;Stereographic projection in 3D.svg&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/8/88/Stereographic_projection_in_3D.svg/220px-Stereographic_projection_in_3D.svg.png&quot; decoding=&quot;async&quot; width=&quot;220&quot; height=&quot;162&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/8/88/Stereographic_projection_in_3D.svg/330px-Stereographic_projection_in_3D.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/88/Stereographic_projection_in_3D.svg/440px-Stereographic_projection_in_3D.svg.png 2x&quot; data-file-width=&quot;815&quot; data-file-height=&quot;599&quot;&gt;</is_defined_as>
+        <is_defined_as xml:lang="en">&lt;p&gt;In Greek, &quot;geo&quot; means earth, and &quot;metron” means measure. Egyptians were among the first people to use geometry to survey the land. The study of geometry was carried on by the Greeks Thales, Pythagoras (550 BC), Plato, and Euclid ( father of geometry, 300 BC). They not only asked “how” and “what” but also asked, “why.” At the foundations of any theory, there are truths, which are taken for granted and can&apos;t be proved or disproved. These are called axioms. The first axiomatic system was developed by Euclid in his books called &quot;Elements&quot;. &lt;/p&gt;
+
+&lt;p&gt;Research in teaching and learning of geometry has given strong support to the van Hiele theory. This theory was developed in the late 1950s by two Netherlands mathematics teachers. they observed that in learning geometry, students seem to progress through the following sequence: recognition, analysis, relationship, deduction (the study of geometry as a mathematical system), and axiomatic&lt;/p&gt;</is_defined_as>
         <nodeInfo xml:lang="en">Geometry</nodeInfo>
     </owl:NamedIndividual>
 </rdf:RDF>
