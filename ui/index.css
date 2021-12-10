@@ -1,0 +1,48 @@
+div.container{
+    padding : 20px;
+    margin: 10 px;
+    display:none;
+    width: 100%;
+}
+
+div.white-bord {
+        width : 400px
+        padding : 20px;
+        border : 1px solid black;
+        align-content:center;
+        display:flex;
+        flex-wrap:wrap;
+    }
+    div.nav-bar{
+        width: 200px;
+        padding: 20px
+    }
+div.scroll-content {
+  background-color: lightblue;
+  overflow-y: scroll;
+}
+.start-container{
+
+    background-color: purple;
+    padding: 30px;
+    margin: 30px;
+    display:flex;
+    flex-wrap:wrap;
+    align-content:center;
+    align-items: center
+}
+.start-button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+

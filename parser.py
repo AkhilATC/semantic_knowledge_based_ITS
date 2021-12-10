@@ -29,6 +29,17 @@ class OwlCustomParser:
         else:
             HistoryManager.store_cache(self.app_store)
 
+    def initiate_chat(self,instance_name):
+        root_instance = f"{self.base_uri}{instance_name}"
+        prop_name = f"{self.base_uri}is_defined_as"
+        query = "SELECT ?value  " \
+                + "WHERE { <" + root_instance + "> a owl:NamedIndividual ." \
+                + "<"+prop_name+"> a owl:DatatypeProperty ." \
+                + " <" + root_instance + ">  <"+prop_name+"> ?value}"
+        value = default_world.sparql(query)
+        return [x[0] for x in value][0]
+
+
     def check_node_type(fun_):
         def inner_fun(self, node):
             concept = [x.name for x in self.ontology.classes()]
@@ -54,8 +65,6 @@ class OwlCustomParser:
             if node.get('type') == 'concept':
                 imp_node = f"{self.base_uri}{node['imp_instance']}"
                 node_name = f"{self.base_uri}{node['uri']}"
-
-                print(node_name)
                 query = "SELECT ?sub_nodes ?nodeInfo  " \
                         + "WHERE { <"+node_name+"> a owl:Class ."\
                         + "?sub_nodes a owl:NamedIndividual ." \
@@ -64,7 +73,6 @@ class OwlCustomParser:
                 concept_info = default_world.sparql(query)
                 concept_info = [{'uri': x[0].name, 'name':x[1]} for x in concept_info]
                 print(list(concept_info))
-
 
         except Exception as e:
             message = e
