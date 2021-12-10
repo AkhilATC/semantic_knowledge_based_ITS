@@ -6,8 +6,9 @@ div.container{
 }
 
 div.white-bord {
-        width : 400px
-        padding : 20px;
+        width : 600px
+        padding : 10px;
+        margin: 30px;
         border : 1px solid black;
         align-content:center;
         display:flex;
@@ -43,6 +44,19 @@ div.scroll-content {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 10px;
+}
+.feature-button{
+  background-color: #98AFC7; /* lime */
+  border: none;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 6px 3px;
+  cursor: pointer;
+  border-radius: 15px;
 }
 
 

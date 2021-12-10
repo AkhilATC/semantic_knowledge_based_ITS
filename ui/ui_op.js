@@ -8,11 +8,20 @@ function settingUp(){
 }
 function call_Back(output){
     console.log("---- >>> ",output)
-    document.getElementById("display").innerHTML = output
-    notification("Please note down ...📝")
+    if(output.status){
+        document.getElementById("display").innerHTML = output.data
+        notification(output.message)
+    }else{
+        document.getElementById("display").innerHTML = ""
+        notification(output.message)
+    }
+
+}
+function parseInfo(nodeInfo){
+    console.log("got data here---"+nodeInfo);
 }
 
 function notification(msg){
-    conersation = "💬 : "+msg
-    document.getElementById("notifID").innerHTML = conersation
+    MsgData = "💬 : "+msg
+    document.getElementById("notifID").innerHTML = MsgData;
 }

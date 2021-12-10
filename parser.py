@@ -13,6 +13,18 @@ class ItsCustomExceptions(Exception):
         return self.message
 
 
+def construct_html_data(data, node_type, element_type ='button'):
+    str_ = ["<p>See also ↘️</p>️"] if node_type == 'feature' else ["<p>Concepts in geometry</p><br>"]
+    class_name = "topic-button" if node_type == 'topic' else "feature-button"
+    for element in data:
+        if element_type == 'button':
+            f = f"<button class =\"{class_name}\" onclick=\"parseInfo(\'{element['uri']}\')\" >" \
+                f" {element['nodeInfo']}\
+            </button><br>"
+            str_.append(f)
+    return ''.join(str_)
+
+
 class OwlCustomParser:
     def __init__(self):
         print('--OwlCustomParser init--')
@@ -30,16 +42,34 @@ class OwlCustomParser:
             HistoryManager.store_cache(self.app_store)
 
     def initiate_chat(self):
-        root_instance = f"{self.base_uri}{'IMP_Geometry'}"
-        prop_name = f"{self.base_uri}is_defined_as"
-        query = "SELECT ?value  " \
-                + "WHERE { <" + root_instance + "> a owl:NamedIndividual ." \
-                + "<"+prop_name+"> a owl:DatatypeProperty ." \
-                + " <" + root_instance + ">  <"+prop_name+"> ?value}"
-        value = default_world.sparql(query)
-        value = [x[0] for x in value][0]
-        return f"{value} <br> Here i found some data :<button class='start-button' onclick='settingUp()'>Start</button>"
+        try:
+            root_instance = f"{self.base_uri}{'IMP_Geometry'}"
+            root_concept = f"{self.base_uri}{'IMP_Geometry'}"
+            prop_name = f"{self.base_uri}is_defined_as"
+            # fetch is_defined_as prop value
+            query = "SELECT ?value  " \
+                    + "WHERE { <" + root_instance + "> a owl:NamedIndividual ." \
+                    + "<"+prop_name+"> a owl:DatatypeProperty ." \
+                    + " <" + root_instance + ">  <"+prop_name+"> ?value}"
+            value = default_world.sparql(query)
+            value = [x[0] for x in value][0]
+            # fetch sub_nodes
+            #Todo
+            # fetch general properties
+            feature_query = "SELECT ?uri ?nodeInfo "\
+                            + "WHERE { <" + root_instance + "> a owl:NamedIndividual ."\
+                            + " ?uri a owl:DatatypeProperty ."\
+                            + " <" + root_instance + ">  ?uri ?value ." \
+                            + "?uri <" + self.annotation_prop + "> ?nodeInfo}"
 
+            data = default_world.sparql(feature_query)
+            data = [{'uri': x[0].name,'nodeInfo':x[1]} for x in data]
+            print(data)
+            value = value + construct_html_data(data, 'feature')
+            return {'status': True, 'message': "Please note down...📝", 'data': value}
+        except Exception as e:
+            print(e)
+            return {'message': 'Failed to fetch data', "status": False}
 
     def check_node_type(fun_):
         def inner_fun(self, node):
