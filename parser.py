@@ -44,32 +44,49 @@ def build_query(node_data, query_type):
             + " <" + root_instance + ">  <" + prop_name + "> ?value}"
         return query
     if query_type == 'sub_classes':
-        annotation_ = node_data['annotation']
+        annotation_name = node_data['annotation']
         concept = node_data['concept']
         query = "SELECT ?uri ?nodeInfo   " \
             + "WHERE { <" + concept + "> a owl:Class ." \
             + "?uri rdfs:subClassOf <" + concept + "> ." \
-            + "?uri <" + annotation_ + "> ?nodeInfo}"
+            + "?uri <" + annotation_name + "> ?nodeInfo}"
         return query
 
     if query_type == 'instances':
-        annotation_ = node_data['annotation']
+        annotation_name = node_data['annotation']
         concept = node_data['concept']
         query = "SELECT ?uri ?nodeInfo   " \
                 + "WHERE { <" + concept + "> a owl:Class ." \
                 + "?uri a owl:NamedIndividual ."\
                 + "?uri rdf:type <" + concept + "> ." \
-                + "?uri <" + annotation_ + "> ?nodeInfo}"
+                + "?uri <" + annotation_name + "> ?nodeInfo}"
         return query
 
     if query_type == 'properties':
-        annotation_ = node_data['annotation']
+        annotation_name = node_data['annotation']
         root_instance = node_data['property_of']
         query = "SELECT ?uri ?nodeInfo " \
             + "WHERE { <" + root_instance + "> a owl:NamedIndividual ." \
             + " ?uri a owl:DatatypeProperty ." \
             + " <" + root_instance + ">  ?uri ?value ." \
-            + "?uri <" + annotation_ + "> ?nodeInfo}"
+            + "?uri <" + annotation_name + "> ?nodeInfo}"
+        return query
+    if query_type == 'domain':
+        prop_name = node_data['property']
+        query = "SELECT ?uri " \
+                + "WHERE { <" + prop_name + "> a owl:DatatypeProperty ." \
+                + " <" + prop_name + ">  rdfs:domain ?uri .}"
+        return query
+
+    if query_type == 'data_property_axiom':
+        prop_name = node_data['property']
+        annotation_name = node_data['annotation']
+        query = "SELECT ?uri ?nodeInfo " \
+                + "WHERE { <" + prop_name + "> a owl:DatatypeProperty ." \
+                + "?uri a owl:NamedIndividual ."\
+                + "?uri <"+prop_name+"> ?value ."\
+                + "?uri <" + annotation_name + "> ?nodeInfo}"
+        print(query)
         return query
 
 
@@ -170,24 +187,61 @@ class OwlCustomParser:
 
             if node.get('type') == 'individual':
                 node_name = f"{self.base_uri}{node['uri']}"
-                prop_name = f"{self.base_uri}is_defined_as"
                 annotation_prop = self.annotation_prop
-
+                previous_prop = HistoryManager.get_store_cache(self.app_store, key="property")
+                prop_name = f"{self.base_uri}is_defined_as" if not previous_prop else f"{self.base_uri}{previous_prop}"
                 value_query = build_query({'property_of': node_name,
                                            'property': prop_name}, 'data_assertions')
                 value = default_world.sparql(value_query)
                 value = [x[0] for x in value][0]
-                # fetch general properties
-                feature_query = build_query({'annotation': annotation_prop,
-                                             'property_of': node_name}, 'properties')
+                print("issue here ----->>>>")
+                if not previous_prop:
 
-                data = default_world.sparql(feature_query)
-                data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
-                # print(data)
-                value = value + construct_html_data(data, 'feature')
-                HistoryManager.store_specfic(self.app_store, 'instance', node['uri'])
-                HistoryManager.display_store(self.app_store)
+                    # fetch general properties
+                    feature_query = build_query({'annotation': annotation_prop,
+                                                 'property_of': node_name}, 'properties')
+
+                    data = default_world.sparql(feature_query)
+                    data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
+                    # print(data)
+                    value = value + construct_html_data(data, 'feature')
+                    HistoryManager.store_specfic(self.app_store, 'instance', node['uri'])
+                    HistoryManager.display_store(self.app_store)
                 return {'status': True, 'message': "Please note down...📝", 'data': value}
+            if node.get('type') == 'data_property':
+                prop_name = f"{self.base_uri}{node['uri']}"
+                annotation_prop = self.annotation_prop
+                previous_instance = HistoryManager.get_store_cache(self.app_store, key="instance")
+                print(f"--- PREVIOUS INSTANCE --- {previous_instance}")
+                content = ''
+                if not previous_instance:
+                    # Fetch all nodes under that
+                    domain_query = build_query({'property': prop_name}, 'domain')
+                    domain = list(default_world.sparql(domain_query))[0][0].name
+                    root_instance = f"{self.base_uri}IMP_{domain}"
+                    value_query = build_query({'property_of': root_instance,
+                                               'property': prop_name}, 'data_assertions')
+                    value = default_world.sparql(value_query)
+                    content = '' if not value else [x[0] for x in value][0]
+                    print("------ NNNNN----")
+                    # query for all individuals under feature
+                    ind_query = build_query({'property': prop_name,
+                                             'annotation': annotation_prop}, "data_property_axiom")
+                    print("here im")
+                    inds = default_world.sparql(ind_query)
+                    data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in inds]
+                    data = construct_html_data(data, 'topic')
+                    if data:
+                        step_text = "<br> Following topics also coverd this feature <br> "
+                        content = content+step_text+data
+                else:
+                    value_query = build_query({'property_of':  f"{self.base_uri}{previous_instance}",
+                                               'property': prop_name}, 'data_assertions')
+                    value = default_world.sparql(value_query)
+                    content = [x[0] for x in value][0]
+                HistoryManager.store_specfic(self.app_store, 'property', node['uri'])
+                HistoryManager.display_store(self.app_store)
+                return {'status': True, 'message': "Please note down...📝", 'data': content}
 
         except Exception as e:
             message = e

@@ -14,7 +14,7 @@ def init_session():
 
 @eel.expose
 def fetch_info(node):
-    print("----- in fetch info --")
+    print(f"----- in fetch info -- {node}")
     parser = CoreParser()
     output = parser.construct_query(node)
     return output
