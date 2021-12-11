@@ -14,6 +14,8 @@ class ItsCustomExceptions(Exception):
 
 
 def construct_html_data(data, node_type, element_type ='button'):
+    if not data:
+        return ''
     str_ = ["<p>See also ↘️</p>️"] if node_type == 'feature' else ["<p>Concepts in geometry ↘️</p>"]
     class_name = "topic-button" if node_type == 'topic' else "feature-button"
     for element in data:
@@ -49,6 +51,17 @@ def build_query(node_data, query_type):
             + "?uri rdfs:subClassOf <" + concept + "> ." \
             + "?uri <" + annotation_ + "> ?nodeInfo}"
         return query
+
+    if query_type == 'instances':
+        annotation_ = node_data['annotation']
+        concept = node_data['concept']
+        query = "SELECT ?uri ?nodeInfo   " \
+                + "WHERE { <" + concept + "> a owl:Class ." \
+                + "?uri a owl:NamedIndividual ."\
+                + "?uri rdf:type <" + concept + "> ." \
+                + "?uri <" + annotation_ + "> ?nodeInfo}"
+        return query
+
     if query_type == 'properties':
         annotation_ = node_data['annotation']
         root_instance = node_data['property_of']
@@ -104,6 +117,7 @@ class OwlCustomParser:
             # print(data)
             value = value + construct_html_data(data, 'feature')
             HistoryManager.store_cache(self.app_store, data={"concept": "Geometry"})
+            HistoryManager.display_store(self.app_store)
             return {'status': True, 'message': "Please note down...📝", 'data': value}
         except Exception as e:
             print(e)
@@ -139,16 +153,40 @@ class OwlCustomParser:
                                      'property': prop_name}, 'data_assertions')
                 value = default_world.sparql(value_query)
                 value = [x[0] for x in value][0]
-                sub_node_query = build_query({'concept': node_name,'annotation': self.annotation_prop}, 'sub_classes')
+                sub_node_query = build_query({'concept': node_name,
+                                              'annotation': self.annotation_prop}, 'sub_classes')
                 concept_info = default_world.sparql(sub_node_query)
-                concept_info = [{'uri': x[0].name, 'name':x[1]} for x in concept_info]
+                concept_info = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in concept_info]
                 if not concept_info:
-                    concept_info = []
-                    print("---FETCH NAMED INDIVIDUALS-")
+                    instance_query = build_query({'concept': node_name,
+                                              'annotation': self.annotation_prop}, 'instances')
+                    concept_info = default_world.sparql(instance_query)
+                    concept_info = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in concept_info]
                     #todo fetch Named Individls
                 value = value + construct_html_data(concept_info, 'topic')
-                print(f"--- GOT HERE ---{value}")
                 HistoryManager.store_specfic(self.app_store, 'concept', node['uri'])
+                HistoryManager.display_store(self.app_store)
+                return {'status': True, 'message': "Please note down...📝", 'data': value}
+
+            if node.get('type') == 'individual':
+                node_name = f"{self.base_uri}{node['uri']}"
+                prop_name = f"{self.base_uri}is_defined_as"
+                annotation_prop = self.annotation_prop
+
+                value_query = build_query({'property_of': node_name,
+                                           'property': prop_name}, 'data_assertions')
+                value = default_world.sparql(value_query)
+                value = [x[0] for x in value][0]
+                # fetch general properties
+                feature_query = build_query({'annotation': annotation_prop,
+                                             'property_of': node_name}, 'properties')
+
+                data = default_world.sparql(feature_query)
+                data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
+                # print(data)
+                value = value + construct_html_data(data, 'feature')
+                HistoryManager.store_specfic(self.app_store, 'instance', node['uri'])
+                HistoryManager.display_store(self.app_store)
                 return {'status': True, 'message': "Please note down...📝", 'data': value}
 
         except Exception as e:

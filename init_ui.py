@@ -14,10 +14,11 @@ def init_session():
 
 @eel.expose
 def fetch_info(node):
-    print("----- in init --")
+    print("----- in fetch info --")
     parser = CoreParser()
     output = parser.construct_query(node)
     return output
+
 
 eel.init("ui")
 # Start the index.html file
