@@ -32,6 +32,10 @@ div.scroll-content {
     align-content:center;
     align-items: center
 }
+.notification{
+    display:flex;
+    justify-content: space-between;
+}
 .start-button {
   background-color: #04AA6D; /* Green */
   border: none;

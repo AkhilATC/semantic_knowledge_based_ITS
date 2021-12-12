@@ -13,10 +13,10 @@ class ItsCustomExceptions(Exception):
         return self.message
 
 
-def construct_html_data(data, node_type, element_type ='button'):
+def construct_html_data(data, node_type, pre_msg, element_type ='button'):
     if not data:
         return ''
-    str_ = ["<p>See also ↘️</p>️"] if node_type == 'feature' else ["<p>Concepts in geometry ↘️</p>"]
+    str_ = [pre_msg]
     class_name = "topic-button" if node_type == 'topic' else "feature-button"
     for element in data:
         if element_type == 'button':
@@ -55,11 +55,13 @@ def build_query(node_data, query_type):
     if query_type == 'instances':
         annotation_name = node_data['annotation']
         concept = node_data['concept']
+        print("---- IS ---"+concept)
         query = "SELECT ?uri ?nodeInfo   " \
                 + "WHERE { <" + concept + "> a owl:Class ." \
                 + "?uri a owl:NamedIndividual ."\
-                + "?uri rdf:type <" + concept + "> ." \
-                + "?uri <" + annotation_name + "> ?nodeInfo}"
+                + "?uri rdf:type <" + concept + "> " \
+                + "?uri <" + annotation_name + "> ?nodeInfo }"
+
         return query
 
     if query_type == 'properties':
@@ -124,7 +126,7 @@ class OwlCustomParser:
             sub_nodes = default_world.sparql(node_query)
             sub_nodes = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in sub_nodes]
             # print(sub_nodes)
-            value = value + construct_html_data(sub_nodes, 'topic')
+            value = value + construct_html_data(sub_nodes, 'topic', "<p>Concepts in geometry ↘️</p>")
             # fetch general properties
             feature_query = build_query({'annotation': annotation,
                                          'property_of': root_instance}, 'properties')
@@ -132,7 +134,7 @@ class OwlCustomParser:
             data = default_world.sparql(feature_query)
             data = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in data]
             # print(data)
-            value = value + construct_html_data(data, 'feature')
+            value = value + construct_html_data(data, 'feature', "<p>See also ↘️</p>️")
             HistoryManager.store_cache(self.app_store, data={"concept": "Geometry"})
             HistoryManager.display_store(self.app_store)
             return {'status': True, 'message': "Please note down...📝", 'data': value}
@@ -163,6 +165,7 @@ class OwlCustomParser:
             if not history:
                 raise ItsCustomExceptions('Failed to fetch cache')
             if node.get('type') == 'concept':
+                print('type concept')
                 imp_node = f"{self.base_uri}{node['imp_instance']}"
                 node_name = f"{self.base_uri}{node['uri']}"
                 prop_name = f"{self.base_uri}is_defined_as"
@@ -175,12 +178,17 @@ class OwlCustomParser:
                 concept_info = default_world.sparql(sub_node_query)
                 concept_info = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in concept_info]
                 if not concept_info:
+                    print('not concept info')
                     instance_query = build_query({'concept': node_name,
                                               'annotation': self.annotation_prop}, 'instances')
+                    print('not concept info 2')
+                    print(instance_query)
                     concept_info = default_world.sparql(instance_query)
-                    concept_info = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in concept_info]
+                    print("Here e got ---????")
+                    print(list(concept_info))
+                    concept_info = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in concept_info if x[0].name != node['imp_instance']]
                     #todo fetch Named Individls
-                value = value + construct_html_data(concept_info, 'topic')
+                value = value + construct_html_data(concept_info, 'topic',"<p>Concepts in geometry ↘️</p>")
                 HistoryManager.store_specfic(self.app_store, 'concept', node['uri'])
                 HistoryManager.display_store(self.app_store)
                 return {'status': True, 'message': "Please note down...📝", 'data': value}
@@ -204,7 +212,7 @@ class OwlCustomParser:
                     data = default_world.sparql(feature_query)
                     data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
                     # print(data)
-                    value = value + construct_html_data(data, 'feature')
+                    value = value + construct_html_data(data, 'feature', "<p>See also ↘️</p>️")
                     HistoryManager.store_specfic(self.app_store, 'instance', node['uri'])
                     HistoryManager.display_store(self.app_store)
                 return {'status': True, 'message': "Please note down...📝", 'data': value}
@@ -218,7 +226,8 @@ class OwlCustomParser:
                     # Fetch all nodes under that
                     domain_query = build_query({'property': prop_name}, 'domain')
                     domain = list(default_world.sparql(domain_query))[0][0].name
-                    root_instance = f"{self.base_uri}IMP_{domain}"
+                    root_instance_name = f"IMP_{domain}"
+                    root_instance = f"{self.base_uri}{root_instance_name}"
                     value_query = build_query({'property_of': root_instance,
                                                'property': prop_name}, 'data_assertions')
                     value = default_world.sparql(value_query)
@@ -229,11 +238,11 @@ class OwlCustomParser:
                                              'annotation': annotation_prop}, "data_property_axiom")
                     print("here im")
                     inds = default_world.sparql(ind_query)
-                    data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in inds]
-                    data = construct_html_data(data, 'topic')
+                    data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in inds if x[0].name != root_instance_name ]
+
                     if data:
                         step_text = "<br> Following topics also coverd this feature <br> "
-                        content = content+step_text+data
+                        content = content + construct_html_data(data, 'topic', step_text)
                 else:
                     value_query = build_query({'property_of':  f"{self.base_uri}{previous_instance}",
                                                'property': prop_name}, 'data_assertions')
