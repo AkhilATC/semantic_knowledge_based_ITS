@@ -36,6 +36,14 @@ div.scroll-content {
     display:flex;
     justify-content: space-between;
 }
+.table-bordered.table, th, td {
+
+  border: 1px solid white;
+  border-collapse: collapse;
+
+  background-color: #228B22	;
+
+}
 .start-button {
   background-color: #04AA6D; /* Green */
   border: none;

@@ -1,7 +1,7 @@
 from owlready2 import *
 from cache_store import HistoryManager
 
-
+#https://byjus.com/maths/2d-shapes/
 class ItsCustomExceptions(Exception):
 
     def __init__(self, message='Failed to fetch info'):
@@ -181,14 +181,19 @@ class OwlCustomParser:
                     print('not concept info')
                     instance_query = build_query({'concept': node_name,
                                               'annotation': self.annotation_prop}, 'instances')
-                    print('not concept info 2')
-                    print(instance_query)
-                    concept_info = default_world.sparql(instance_query)
-                    print("Here e got ---????")
-                    print(list(concept_info))
-                    concept_info = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in concept_info if x[0].name != node['imp_instance']]
+                    instances = default_world.sparql(instance_query)
+                    instance_list = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in instances if x[0].name != node['imp_instance']]
+                    concept_info.extend(instance_list)
                     #todo fetch Named Individls
-                value = value + construct_html_data(concept_info, 'topic',"<p>Concepts in geometry ↘️</p>")
+
+                value = value + construct_html_data(concept_info, 'topic', "<p>Concepts in geometry ↘️</p>")
+                feature_query = build_query({'annotation': self.annotation_prop,
+                                             'property_of': imp_node}, 'properties')
+
+                data = default_world.sparql(feature_query)
+                data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
+                # print(data)
+                value = value + construct_html_data(data, 'feature', "<p>See also ↘️</p>️")
                 HistoryManager.store_specfic(self.app_store, 'concept', node['uri'])
                 HistoryManager.display_store(self.app_store)
                 return {'status': True, 'message': "Please note down...📝", 'data': value}
@@ -210,7 +215,7 @@ class OwlCustomParser:
                                                  'property_of': node_name}, 'properties')
 
                     data = default_world.sparql(feature_query)
-                    data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
+                    data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data if x[0].name != "is_defined_as"]
                     # print(data)
                     value = value + construct_html_data(data, 'feature', "<p>See also ↘️</p>️")
                     HistoryManager.store_specfic(self.app_store, 'instance', node['uri'])

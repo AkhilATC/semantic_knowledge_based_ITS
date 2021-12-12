@@ -41,6 +41,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Area_of_2D -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Area_of_2D">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <nodeInfo xml:lang="en">Area and Perimeter of 2D Shapes</nodeInfo>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Important_concepts -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Important_concepts">
@@ -118,13 +128,42 @@
     
 
 
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Circle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Circle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Area&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Perimeter&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Circle&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Πr&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; (R is the radius of the circle)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2πr&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</Area_of_2D>
+        <is_defined_as xml:lang="en">&lt;p&gt; A circle is a closed 2d figure in which the set of all the points in the plane is equidistant from a given point called “center”. The distance from the center to the outer line of the circle is called a radius. The example of the circle in real life are wheels, pizzas, orbit, etc.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/img/circle.png&quot;&gt;&lt;/center&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Circle</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_2D_Geometry -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_2D_Geometry">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;p&gt;
-A polygon is a closed, 2-dimensional shape, with edges(sides) are straight lines. The word “polygon” is derived from Greek for “many angles”. The names of the polygons are taken from the Greek number prefixes followed by –gon, with only a couple exceptions.
-&lt;/p&gt;</is_defined_as>
+        <Area_of_2D xml:lang="en">The area is the region covered by a 2d shape on a plane.</Area_of_2D>
+        <is_defined_as xml:lang="en">&lt;p&gt;In geometry, a two-dimensional shape can be defined as a flat plane figure or a shape that has two dimensions – length and width. 
+Two-dimensional or 2-D shapes do not have any thickness and can be measured in only two faces. &lt;/p&gt;
+
+&lt;p&gt;We can classify figures on the basis of the dimensions they have. 
+A circle, triangle, square, rectangle and pentagon are examples of two-dimensional shapes.&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/img/2d.png&quot;&gt;&lt;/center&gt;</is_defined_as>
         <nodeInfo xml:lang="en">2-D Geometry</nodeInfo>
     </owl:NamedIndividual>
     
@@ -134,6 +173,11 @@ A polygon is a closed, 2-dimensional shape, with edges(sides) are straight lines
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_3D_Geometry">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;p&gt;3D geometry involves the mathematics of shapes in 3D space and involving 3 coordinates which are x-coordinate, y-coordinate and z-coordinate. In a 3d space, three parameters are required to find the exact location of a point.&lt;/p&gt;
+
+&lt;br&gt;
+We can understand any 3D space in terms of 3 coordinates- x, y, and z.
+&lt;center&gt;&lt;img src=&quot;/img/3d_space.png&quot;&gt;&lt;/center&gt;</is_defined_as>
         <nodeInfo xml:lang="en">3-D Geometry</nodeInfo>
     </owl:NamedIndividual>
     
@@ -162,6 +206,127 @@ Euclidean geometry, sometimes called parabolic geometry, is a geometry that foll
 
 &lt;p&gt;Research in teaching and learning of geometry has given strong support to the van Hiele theory. This theory was developed in the late 1950s by two Netherlands mathematics teachers. they observed that in learning geometry, students seem to progress through the following sequence: recognition, analysis, relationship, deduction (the study of geometry as a mathematical system), and axiomatic&lt;/p&gt;</is_defined_as>
         <nodeInfo xml:lang="en">Geometry</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Octagon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Octagon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;p&gt;An octagon is an eight-sided polygon which can be either regular or irregular. It is a 2d shape which has eight angles. The sum of all the interior angles of an octagon is 1080°. The stop sign board has an octagon shape, which you can see on the roadside.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;img src=&quot;/img/octagon.png&quot;&gt;
+&lt;/center&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Octagon</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Pentagon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Pentagon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;p&gt;
+A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregular. In the case of a regular pentagon, each interior angle is equal to 108°, and each exterior angle measures 72°. It has five diagonals. The Pentagon building, which is the headquarters of the US Department of Defense, is a great example of the pentagon shape.
+&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&quot;/img/pentagon.png&quot;&gt;
+&lt;/center&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Pentagon</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Rectangle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Rectangle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Area&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Perimeter&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Rectangle&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Length x Breadth&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2(Length + Breadth)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</Area_of_2D>
+        <is_defined_as xml:lang="en">&lt;p&gt;
+A rectangle is a 2d shape which has four sides, where the opposite sides are equal and parallel to each other. All the angles of a rectangle are equal to 90°. A brick, TV, cardboard, which has length and breadth are examples of the rectangle.
+&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&quot;/img/rectangle.png&quot;&gt;
+&lt;/center&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Rectangle</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Square -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Square">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Area&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Perimeter&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Square&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Side&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;4(Side)&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</Area_of_2D>
+        <is_defined_as xml:lang="en">&lt;p&gt;
+A square is a four-sided polygon (2d Shape), whose four sides are equal in length and all the angles are equal to 90°. It is considered to be a two-dimensional regular quadrilateral. The diagonals of the square also bisect each other at 90°. A wall or a table where all the sides are equal are the examples of square shape.
+&lt;/p&gt;
+
+&lt;center&gt;
+&lt;img src=&quot;/img/square.png&quot;&gt;
+&lt;/center&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Square</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Triangle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Triangle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Area&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Perimeter&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Triangle&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;½ (Base x height)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Sum of three sides&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</Area_of_2D>
+        <is_defined_as xml:lang="en">&lt;p&gt;
+A triangle is a three-sided polygon (2d Shape) which has three edges and three vertices. The sum of all the three angles of a triangle is equal to 180°. Pyramids are the best example of a triangle shape. You can also learn the properties of triangle here.
+&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&quot;/img/triangle.png&quot;&gt;
+
+&lt;/center&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Triangle</nodeInfo>
     </owl:NamedIndividual>
 </rdf:RDF>
 
