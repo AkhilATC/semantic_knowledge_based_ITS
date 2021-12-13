@@ -161,7 +161,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Circle">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of circle&lt;p&gt;
+&lt;br&gt;
+
+
+&lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
@@ -310,7 +314,10 @@ Euclidean geometry, sometimes called parabolic geometry, is a geometry that foll
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Octagon">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of Octagon&lt;/p&gt;
+&lt;br&gt;
+
+&lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
@@ -345,7 +352,9 @@ Euclidean geometry, sometimes called parabolic geometry, is a geometry that foll
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Pentagon">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+        <Area_of_2D xml:lang="en">Area and perimeter of Pentagon
+
+&lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
@@ -422,7 +431,8 @@ A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregula
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Rectangle">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt;Area and perimeter of Rectangle&lt;/p&gt;
+&lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
@@ -462,7 +472,8 @@ A rectangle is a 2d shape which has four sides, where the opposite sides are equ
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Square">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of Square&lt;/p&gt;
+&lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
@@ -502,7 +513,8 @@ A square is a four-sided polygon (2d Shape), whose four sides are equal in lengt
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Triangle">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of Triangle&lt;/p&gt;
+&lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
