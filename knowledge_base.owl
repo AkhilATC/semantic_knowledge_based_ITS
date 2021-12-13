@@ -75,7 +75,17 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Surface_Area_of_3D_shapes">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <nodeInfo xml:lang="en">Surface Area and Volume of 3D shapes</nodeInfo>
+        <nodeInfo xml:lang="en">Surface Area of 3D shapes</nodeInfo>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Volume_of_3D_shapes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Volume_of_3D_shapes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <nodeInfo xml:lang="en">Volume of 3D shapes</nodeInfo>
     </owl:DatatypeProperty>
     
 
@@ -191,7 +201,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Cube">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cube.png&quot; alt=&quot;cube&quot; /&gt;
+        <Surface_Area_of_3D_shapes xml:lang="en">&lt;span style=&quot;font-weight: 400;&quot;&gt;The Surface Area of a Cube = 6a&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2 &lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;square units&lt;/span&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The volume of a Cube = a&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;3 &lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&amp;nbsp;cubic units&lt;/span&gt;&lt;/td&gt;</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt;&lt;img src=&quot;/img/cube.png&quot; alt=&quot;cube&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;A cube is a solid or three-dimensional shape which has 6 square faces. The cube has the following properties.
 &lt;/p&gt;
 
@@ -212,7 +224,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Cuboid">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cuboid.png&quot; alt=&quot;cuboid&quot; /&gt;
+        <Surface_Area_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The Surface Area of a Cuboid = 2(lb+bh+lh) Square units&lt;/span&gt;&lt;/td&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The volume of a Cuboid = lbh Cubic units&lt;/span&gt;&lt;/td&gt;</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt;&lt;img src=&quot;/img/cuboid.png&quot; alt=&quot;cuboid&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;A cuboid is also called a rectangular prism, where the faces of the cuboid are a rectangle in shape. All the angles measure 90 degrees. The cuboid has
 &lt;/p&gt;
 
@@ -254,6 +268,7 @@ A circle, triangle, square, rectangle and pentagon are examples of two-dimension
 	&lt;li&gt;Lateral Surface Area (LSA) is the area of all the curved regions and all the flat surfaces excluding base areas
 &lt;/li&gt;
 	&lt;li&gt;Total Surface Area (TSA) is the area of all the surfaces including the base of a 3D object&lt;/li&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">Volume is defined as the total space occupied by the three-dimensional shape or solid object. The volume is denoted as “V”. It is measured in terms of cubic units.</Volume_of_3D_shapes>
         <is_defined_as xml:lang="en">&lt;p&gt;3D geometry involves the mathematics of shapes in 3D space and involving 3 coordinates which are x-coordinate, y-coordinate and z-coordinate. In a 3d space, three parameters are required to find the exact location of a point.&lt;/p&gt;
 
 &lt;br&gt;
@@ -368,16 +383,17 @@ A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregula
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Prism">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/prism.png&quot; alt=&quot;prism&quot; /&gt;
+        <Surface_Area_of_3D_shapes xml:lang="en">The general formula for the total surface area of a right prism is T.S.A.=ph+2&lt;b&gt;B&lt;/b&gt; where p represents the perimeter of the base, h the height of the prism and &lt;b&gt;B&lt;/b&gt; the area of the base.</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">The formula for the volume of a prism is given by the product of the area of the base and height of the prism.</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt;&lt;img src=&quot;/img/prism.png&quot; alt=&quot;prism&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;A prism is a 3D shape which consists of two equal ends, flat surfaces or faces, and also has identical cross-section across its length. Since the cross-section looks like a triangle, the prism is generally called a triangular prism. The prism does not have any curve. Also, a prism has
 &lt;/p&gt;
 
 
-	&lt;li&gt;6 vertices
-&lt;/li&gt;
-	&lt;li&gt;9 edges
-&lt;/li&gt;
-5 faces – 2 triangles	&lt;li&gt; and 3 rectangles</is_defined_as>
+	&lt;li&gt;6 vertices&lt;/li&gt;
+	&lt;li&gt;9 edges&lt;/li&gt;
+&lt;li&gt;5 faces – 2 triangles&lt;/li&gt;
+&lt;li&gt; and 3 rectangles&lt;/li&gt;</is_defined_as>
         <nodeInfo xml:lang="en">Prism</nodeInfo>
     </owl:NamedIndividual>
     
@@ -387,7 +403,9 @@ A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregula
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Pyramid">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/pyramid.png&quot; alt=&quot;pyramid&quot; /&gt;
+        <Surface_Area_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Surface Area of a Pyramid = (Base area) + (1/2) × (Perimeter) × (Slant height) Square units&lt;/span&gt;&lt;/td&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Volume of a Pyramid =&amp;nbsp; 1/3 × (Base Area) × height Cubic units&lt;/span&gt;&lt;/td&gt;</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt;&lt;img src=&quot;/img/pyramid.png&quot; alt=&quot;pyramid&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;A pyramid a solid shape, whose outer faces are triangular and meet to a single point on the top. The pyramid base can be of any shape such as triangular, square, quadrilateral or in the shape of any polygon. The most commonly used type of a pyramid is the square pyramid, i.e., it has a square base and four triangular faces. Consider a square pyramid, it has&lt;/p&gt;
 
 	&lt;li&gt;5 vertices
@@ -521,7 +539,11 @@ A triangle is a three-sided polygon (2d Shape) which has three edges and three v
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#cone">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cone.png&quot; alt=&quot;cone&quot; /&gt;
+        <Surface_Area_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Surface Area of a Cone = πr(r +√(r&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;+h&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;) Square units&lt;/span&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Curved surface area of a cone =πrl square units&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Slant height of a cone = l = √(r&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;+h&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;) units&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Volume of a Cone = ⅓ πr&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;h Cubic units&lt;/span&gt;&lt;/td&gt;</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt; &lt;img src=&quot;/img/cone.png&quot; alt=&quot;cone&quot; /&gt; &lt;/center&gt;
 A cone is a three-dimensional object or solid, which has a circular base and has a single vertex. The cone is a geometrical figure that decreases smoothly from the circular flat base to the top point called the apex. A cone has
 
 	&lt;li&gt;1 vertex
@@ -540,7 +562,10 @@ A cone is a three-dimensional object or solid, which has a circular base and has
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#cylinder">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cylinder.png&quot; alt=&quot;cylinder&quot; /&gt;
+        <Surface_Area_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The Surface Area of a Cylinder = 2πr(h +r) Square units&lt;/span&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The curved surface area of a cylinder = 2πrh&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The volume of a Cylinder =&amp;nbsp; πr&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; h Cubic units&lt;/span&gt;&lt;/td&gt;</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt;&lt;img src=&quot;/img/cylinder.png&quot; alt=&quot;cylinder&quot; /&gt;&lt;/center&gt;
 &lt;p&gt;A cylinder is defined as a three-dimensional geometrical figure which has two circular bases connected by a curved surface. A cylinder has
 &lt;/p&gt;
 
@@ -561,7 +586,11 @@ A cone is a three-dimensional object or solid, which has a circular base and has
     <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#sphere -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#sphere">
-        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/sphere.png&quot; alt=&quot;sphere&quot; /&gt;
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <Surface_Area_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Curved Surface Area of a Sphere = 2πr² Square units&lt;/span&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Total Surface Area of a Sphere = 4πr² Square units&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;</Surface_Area_of_3D_shapes>
+        <Volume_of_3D_shapes xml:lang="en">&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Volume of a Sphere = 4/3(πr&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;3&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;) cubic units&lt;/span&gt;&lt;/td&gt;</Volume_of_3D_shapes>
+        <is_defined_as xml:lang="en">&lt;center&gt;&lt;img src=&quot;/img/sphere.png&quot; alt=&quot;sphere&quot; /&gt;&lt;/center&gt;
 A sphere is a three-dimensional solid figure which is perfectly round in shapes and every point on its surface is equidistant from the point is called the center. The fixed distance from the center of the sphere is called a radius of the sphere. A sphere has
 
 	&lt;li&gt;No vertex
