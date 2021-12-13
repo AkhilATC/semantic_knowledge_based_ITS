@@ -61,6 +61,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Properties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Properties">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#Geometry"/>
+        <nodeInfo xml:lang="en">Important properties</nodeInfo>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Surface_Area_of_3D_shapes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Surface_Area_of_3D_shapes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <nodeInfo xml:lang="en">Surface Area and Volume of 3D shapes</nodeInfo>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#is_defined_as -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#is_defined_as">
@@ -145,10 +164,65 @@
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2πr&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;</Area_of_2D>
+        <Properties xml:lang="en">&lt;p&gt;Some of the important properties of the circle are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The circles are said to be congruent if they have equal radii&lt;/li&gt;
+&lt;li&gt;The diameter of a circle is the longest chord of a circle&lt;/li&gt;
+&lt;li&gt;Equal chords of a circle subtend equal angles at the centre&lt;/li&gt;
+&lt;li&gt;The radius drawn perpendicular to the chord bisects the chord&lt;/li&gt;
+&lt;li&gt;Circles having different radius are similar&lt;/li&gt;
+&lt;li&gt;A circle can circumscribe a rectangle, trapezium, triangle, square, kite&lt;/li&gt;
+&lt;li&gt;A circle can be inscribed inside a square, triangle and kite&lt;/li&gt;
+&lt;li&gt;The chords that are equidistant from the centre are equal in length&lt;/li&gt;
+&lt;li&gt;The distance from the centre of the circle to the longest chord (diameter) is zero&lt;/li&gt;
+&lt;li&gt;The perpendicular distance from the centre of the circle decreases when the length of the chord increases&lt;/li&gt;
+&lt;li&gt;If the tangents are drawn at the end of the diameter, they are parallel to each other&lt;/li&gt;
+&lt;li&gt;An isosceles triangle is formed when the radii joining the ends of a chord to the centre of a circle&lt;/li&gt;
+&lt;/ul&gt;</Properties>
         <is_defined_as xml:lang="en">&lt;p&gt; A circle is a closed 2d figure in which the set of all the points in the plane is equidistant from a given point called “center”. The distance from the center to the outer line of the circle is called a radius. The example of the circle in real life are wheels, pizzas, orbit, etc.&lt;/p&gt;
 
 &lt;center&gt;&lt;img src=&quot;/img/circle.png&quot;&gt;&lt;/center&gt;</is_defined_as>
         <nodeInfo xml:lang="en">Circle</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Cube -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Cube">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cube.png&quot; alt=&quot;cube&quot; /&gt;
+&lt;p&gt;A cube is a solid or three-dimensional shape which has 6 square faces. The cube has the following properties.
+&lt;/p&gt;
+
+
+	&lt;li&gt;All edges are equal
+&lt;/li&gt;
+	&lt;li&gt;8 vertices
+&lt;/li&gt;
+	&lt;li&gt;12 edges
+&lt;/li&gt;
+	&lt;li&gt;6 faces&lt;/li&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Cube</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Cuboid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Cuboid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cuboid.png&quot; alt=&quot;cuboid&quot; /&gt;
+&lt;p&gt;A cuboid is also called a rectangular prism, where the faces of the cuboid are a rectangle in shape. All the angles measure 90 degrees. The cuboid has
+&lt;/p&gt;
+
+
+	&lt;li&gt;8 vertices
+&lt;/li&gt;
+	&lt;li&gt;12 edges
+&lt;/li&gt;
+	&lt;li&gt;6 faces&lt;/li&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Cuboid</nodeInfo>
     </owl:NamedIndividual>
     
 
@@ -173,6 +247,13 @@ A circle, triangle, square, rectangle and pentagon are examples of two-dimension
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#IMP_3D_Geometry">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <Surface_Area_of_3D_shapes xml:lang="en">Surface Area is defined as the total area of the surface of the three-dimensional object.  It is denoted as “SA”. The surface area is measured in terms of square units. The three different classifications of surface area are defined below. They are:
+
+	&lt;li&gt;Curved Surface Area (CSA) is the area of all the curved regions
+&lt;/li&gt;
+	&lt;li&gt;Lateral Surface Area (LSA) is the area of all the curved regions and all the flat surfaces excluding base areas
+&lt;/li&gt;
+	&lt;li&gt;Total Surface Area (TSA) is the area of all the surfaces including the base of a 3D object&lt;/li&gt;</Surface_Area_of_3D_shapes>
         <is_defined_as xml:lang="en">&lt;p&gt;3D geometry involves the mathematics of shapes in 3D space and involving 3 coordinates which are x-coordinate, y-coordinate and z-coordinate. In a 3d space, three parameters are required to find the exact location of a point.&lt;/p&gt;
 
 &lt;br&gt;
@@ -214,6 +295,27 @@ Euclidean geometry, sometimes called parabolic geometry, is a geometry that foll
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Octagon">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Area&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Perimeter&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Octagon&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;2a&lt;sup&gt;2&lt;/sup&gt;(1+√2)&lt;/td&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;8a&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</Area_of_2D>
+        <Properties xml:lang="en">In the case of properties, we usually consider regular octagons.
+&lt;ul&gt;
+&lt;li&gt;These have eight sides and eight angles.&lt;/li&gt;
+&lt;li&gt;All the sides and all the angles are equal, respectively.&lt;/li&gt;
+&lt;li&gt;There are a total of 20 diagonals in a regular octagon.&lt;/li&gt;
+&lt;li&gt;The total sum of the interior angles is 1080°, where each angle is equal to 135°(135×8 = 1080)&lt;/li&gt;
+&lt;li&gt;Sum of all the exterior angles of the octagon is 360°, and each angle is 45°(45×8=360).&lt;/li&gt;
+&lt;/ul&gt;</Properties>
         <is_defined_as xml:lang="en">&lt;p&gt;An octagon is an eight-sided polygon which can be either regular or irregular. It is a 2d shape which has eight angles. The sum of all the interior angles of an octagon is 1080°. The stop sign board has an octagon shape, which you can see on the roadside.&lt;/p&gt;
 
 &lt;center&gt;
@@ -228,6 +330,29 @@ Euclidean geometry, sometimes called parabolic geometry, is a geometry that foll
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Pentagon">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
+        <Area_of_2D xml:lang="en">&lt;table class=&quot;table-bordered&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;2d Shape&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Area&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;b&gt;Perimeter&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Pentagon&lt;/span&gt;&lt;/td&gt;
+
+&lt;td&gt;A = (5 ⁄ 2) × s × a&lt;/td&gt;
+
+&lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;5a&lt;/span&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</Area_of_2D>
+        <Properties xml:lang="en">&lt;p&gt;Some properties of the pentagon are as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the pentagon, the sum of the interior angles is equal to 540°.&lt;/li&gt;
+&lt;li&gt;If all the sides are equal and all the angles are of equal measure, then it is a regular pentagon. Otherwise, it is irregular.&lt;/li&gt;
+&lt;li&gt;In the regular pentagon, &lt;span style=&quot;font-weight: 400;&quot;&gt;each interior angle measures 108°, and each exterior angle measures 72°&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;An equilateral pentagon has 5 equal sides.&lt;/li&gt;
+&lt;li&gt;The sum of the interior angles of a rectangular pentagon is 540°.&lt;/li&gt;
+&lt;/ul&gt;</Properties>
         <is_defined_as xml:lang="en">&lt;p&gt;
 A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregular. In the case of a regular pentagon, each interior angle is equal to 108°, and each exterior angle measures 72°. It has five diagonals. The Pentagon building, which is the headquarters of the US Department of Defense, is a great example of the pentagon shape.
 &lt;/p&gt;
@@ -235,6 +360,42 @@ A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregula
 &lt;img src=&quot;/img/pentagon.png&quot;&gt;
 &lt;/center&gt;</is_defined_as>
         <nodeInfo xml:lang="en">Pentagon</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Prism -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Prism">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/prism.png&quot; alt=&quot;prism&quot; /&gt;
+&lt;p&gt;A prism is a 3D shape which consists of two equal ends, flat surfaces or faces, and also has identical cross-section across its length. Since the cross-section looks like a triangle, the prism is generally called a triangular prism. The prism does not have any curve. Also, a prism has
+&lt;/p&gt;
+
+
+	&lt;li&gt;6 vertices
+&lt;/li&gt;
+	&lt;li&gt;9 edges
+&lt;/li&gt;
+5 faces – 2 triangles	&lt;li&gt; and 3 rectangles</is_defined_as>
+        <nodeInfo xml:lang="en">Prism</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#Pyramid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Pyramid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/pyramid.png&quot; alt=&quot;pyramid&quot; /&gt;
+&lt;p&gt;A pyramid a solid shape, whose outer faces are triangular and meet to a single point on the top. The pyramid base can be of any shape such as triangular, square, quadrilateral or in the shape of any polygon. The most commonly used type of a pyramid is the square pyramid, i.e., it has a square base and four triangular faces. Consider a square pyramid, it has&lt;/p&gt;
+
+	&lt;li&gt;5 vertices
+&lt;/li&gt;
+	&lt;li&gt;8 edges
+&lt;/li&gt;
+	&lt;li&gt;5 faces&lt;/li&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Pyramid</nodeInfo>
     </owl:NamedIndividual>
     
 
@@ -259,6 +420,15 @@ A pentagon is a five-sided polygon (2d Shape), and it can be regular or irregula
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2(Length + Breadth)&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;</Area_of_2D>
+        <Properties xml:lang="en">Here are the three properties of a rectangle:
+&lt;ul&gt;
+
+	&lt;li&gt;All the angles of a rectangle are 90°
+&lt;/li&gt;
+	&lt;li&gt;Opposite sides of a rectangle are equal and Parallel.
+&lt;/li&gt;
+	&lt;li&gt;Diagonals of a rectangle bisect each other.&lt;/li&gt;
+&lt;/ul&gt;</Properties>
         <is_defined_as xml:lang="en">&lt;p&gt;
 A rectangle is a 2d shape which has four sides, where the opposite sides are equal and parallel to each other. All the angles of a rectangle are equal to 90°. A brick, TV, cardboard, which has length and breadth are examples of the rectangle.
 &lt;/p&gt;
@@ -289,6 +459,15 @@ A rectangle is a 2d shape which has four sides, where the opposite sides are equ
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;4(Side)&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;</Area_of_2D>
+        <Properties xml:lang="en">&lt;p&gt;Some of the important properties of the square are as follows:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;The &lt;a href=&quot;/wiki/Diagonal&quot; title=&quot;Diagonal&quot; target=&quot;_blank&quot;&gt;diagonals&lt;/a&gt; of a square &lt;a href=&quot;/wiki/Bisection&quot; title=&quot;Bisection&quot; target=&quot;_blank&quot;&gt;bisect&lt;/a&gt; each other and meet at 90°.&lt;/li&gt;
+&lt;li&gt;The diagonals of a square bisect its angles.&lt;/li&gt;
+&lt;li&gt;Opposite sides of a square are both &lt;a href=&quot;/wiki/Parallel_(geometry)&quot; title=&quot;Parallel (geometry)&quot; target=&quot;_blank&quot;&gt;parallel&lt;/a&gt; and equal in length.&lt;/li&gt;
+&lt;li&gt;All four angles of a square are equal (each being 360°/4 = 90°, a right angle).&lt;/li&gt;
+&lt;li&gt;All four sides of a square are equal.&lt;/li&gt;
+&lt;li&gt;The diagonals of a square are equal.&lt;/li&gt;
+&lt;li&gt;The square is the n=2 case of the families of n-&lt;a href=&quot;/wiki/Hypercubes&quot; class=&quot;mw-redirect&quot; title=&quot;Hypercubes&quot; target=&quot;_blank&quot;&gt;hypercubes&lt;/a&gt; and n-&lt;a href=&quot;/wiki/Orthoplex&quot; class=&quot;mw-redirect&quot; title=&quot;Orthoplex&quot;&gt;orthoplexes&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;A square has &lt;a href=&quot;/wiki/Schl%C3%A4fli_symbol&quot; title=&quot;Schläfli symbol&quot; target=&quot;_blank&quot;&gt;Schläfli symbol&lt;/a&gt; {4}. A &lt;a href=&quot;/wiki/Truncation_(geometry)&quot; title=&quot;Truncation (geometry)&quot;&gt;truncated&lt;/a&gt; square, t{4}, is an &lt;a href=&quot;/wiki/Octagon&quot; title=&quot;Octagon&quot; target=&quot;_blank&quot;&gt;octagon&lt;/a&gt;, {8}. An &lt;a href=&quot;/wiki/Alternation_(geometry)&quot; title=&quot;Alternation (geometry)&quot;&gt;alternated&lt;/a&gt; square, h{4}, is a &lt;a href=&quot;/wiki/Digon&quot; title=&quot;Digon&quot; target=&quot;_blank&quot;&gt;digon&lt;/a&gt;, {2}.&lt;/li&gt;&lt;/ul&gt;</Properties>
         <is_defined_as xml:lang="en">&lt;p&gt;
 A square is a four-sided polygon (2d Shape), whose four sides are equal in length and all the angles are equal to 90°. It is considered to be a two-dimensional regular quadrilateral. The diagonals of the square also bisect each other at 90°. A wall or a table where all the sides are equal are the examples of square shape.
 &lt;/p&gt;
@@ -319,6 +498,13 @@ A square is a four-sided polygon (2d Shape), whose four sides are equal in lengt
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Sum of three sides&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;</Area_of_2D>
+        <Properties xml:lang="en">&lt;p&gt;Some of the important properties of the triangle are as follows:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;The&lt;em&gt; &lt;/em&gt;triangle is a closed polygon that has three angles, three sides, and three vertices.&lt;/li&gt;
+	&lt;li&gt;Sides and angles are very important aspects of a triangle.&amp;nbsp;We can classify various types of triangles in math by combining sides and angles.&lt;/li&gt;
+	&lt;li&gt;The general formula for calculating the area of a triangle is Area (A) = (1/2) × Base × Height&lt;/li&gt;
+	&lt;li&gt;The perimeter of a triangle is equal to the sum of all three sides of the triangle.&lt;/li&gt;
+&lt;/ul&gt;</Properties>
         <is_defined_as xml:lang="en">&lt;p&gt;
 A triangle is a three-sided polygon (2d Shape) which has three edges and three vertices. The sum of all the three angles of a triangle is equal to 180°. Pyramids are the best example of a triangle shape. You can also learn the properties of triangle here.
 &lt;/p&gt;
@@ -327,6 +513,63 @@ A triangle is a three-sided polygon (2d Shape) which has three edges and three v
 
 &lt;/center&gt;</is_defined_as>
         <nodeInfo xml:lang="en">Triangle</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#cone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#cone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cone.png&quot; alt=&quot;cone&quot; /&gt;
+A cone is a three-dimensional object or solid, which has a circular base and has a single vertex. The cone is a geometrical figure that decreases smoothly from the circular flat base to the top point called the apex. A cone has
+
+	&lt;li&gt;1 vertex
+&lt;/li&gt;
+	&lt;li&gt;1 edge
+&lt;/li&gt;
+	&lt;li&gt;1 flat face – circle
+&lt;/li&gt;
+	&lt;li&gt;1 curved face&lt;/li&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Cone</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#cylinder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#cylinder">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#3D_Geometry"/>
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/cylinder.png&quot; alt=&quot;cylinder&quot; /&gt;
+&lt;p&gt;A cylinder is defined as a three-dimensional geometrical figure which has two circular bases connected by a curved surface. A cylinder has
+&lt;/p&gt;
+
+	
+
+	&lt;li&gt;No vertex
+&lt;/li&gt;
+	&lt;li&gt;2 edges
+&lt;/li&gt;
+	&lt;li&gt;2 flat faces – circles
+&lt;/li&gt;
+&lt;li&gt;1 curved fac&lt;/li&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Cylinder</nodeInfo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kb/ontologies/2021/11/its#sphere -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#sphere">
+        <is_defined_as xml:lang="en">&lt;img src=&quot;/img/sphere.png&quot; alt=&quot;sphere&quot; /&gt;
+A sphere is a three-dimensional solid figure which is perfectly round in shapes and every point on its surface is equidistant from the point is called the center. The fixed distance from the center of the sphere is called a radius of the sphere. A sphere has
+
+	&lt;li&gt;No vertex
+&lt;/li&gt;
+	&lt;li&gt;No edges
+&lt;/li&gt;
+	&lt;li&gt;1 curved face&lt;/li&gt;</is_defined_as>
+        <nodeInfo xml:lang="en">Sphere</nodeInfo>
     </owl:NamedIndividual>
 </rdf:RDF>
 

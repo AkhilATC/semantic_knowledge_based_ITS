@@ -132,7 +132,7 @@ class OwlCustomParser:
                                          'property_of': root_instance}, 'properties')
 
             data = default_world.sparql(feature_query)
-            data = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in data]
+            data = [{'uri': x[0].name, 'nodeInfo':x[1]} for x in data if x[0].name != 'is_defined_as']
             # print(data)
             value = value + construct_html_data(data, 'feature', "<p>See also ↘️</p>️")
             HistoryManager.store_cache(self.app_store, data={"concept": "Geometry"})
@@ -191,7 +191,7 @@ class OwlCustomParser:
                                              'property_of': imp_node}, 'properties')
 
                 data = default_world.sparql(feature_query)
-                data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data]
+                data = [{'uri': x[0].name, 'nodeInfo': x[1]} for x in data if x[0].name != 'is_defined_as']
                 # print(data)
                 value = value + construct_html_data(data, 'feature', "<p>See also ↘️</p>️")
                 HistoryManager.store_specfic(self.app_store, 'concept', node['uri'])
