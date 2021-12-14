@@ -33,4 +33,4 @@ class HistoryManager:
     def display_store(base_store):
         data = base_store.get("history", {})
         parsed_json = eval(data)
-        print(f"DATA IN STORE -->> {parsed_json}")
+        print(f"DATA STORED IN DB --->>> -->> {parsed_json}")

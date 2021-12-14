@@ -161,10 +161,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Circle">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of circle&lt;p&gt;
-&lt;br&gt;
-
-
+        <Area_of_2D xml:lang="en">&lt;p&gt;&lt;strong&gt; Area and perimeter of circle &lt;/strong&gt;&lt;p&gt;
+&lt;center&gt;&lt;br&gt;
 &lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -177,7 +175,20 @@
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Πr&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; (R is the radius of the circle)&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2πr&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/table&gt;</Area_of_2D>
+&lt;/table&gt;&lt;/center&gt;
+
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Example1:&lt;/strong&gt; If the length of the radius of a circle is 4 units. Calculate its area.&lt;/p&gt;
+&lt;p data-speechify-sentence=&quot;&quot;&gt;&lt;strong&gt;Solution:&lt;/strong&gt;&lt;br&gt;
+Radius(r) = 4 units(given)&lt;br&gt;
+Using the formula for the circle&apos;s area,&lt;br&gt;
+Area of a Circle = πr&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;
+Put the values,&lt;br&gt;
+A = π4&lt;sup&gt;2&lt;/sup&gt;&lt;br&gt;
+A =π × 16&lt;br&gt;
+A = 16π ≈ 50.27&lt;/p&gt;
+
+&lt;p data-speechify-sentence=&quot;&quot;&gt;&lt;strong&gt;Answer: &lt;/strong&gt;The area of the circle is 50.27 squared units.&lt;/p&gt;</Area_of_2D>
         <Properties xml:lang="en">&lt;p&gt;Some of the important properties of the circle are as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The circles are said to be congruent if they have equal radii&lt;/li&gt;
@@ -472,7 +483,8 @@ A rectangle is a 2d shape which has four sides, where the opposite sides are equ
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Square">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of Square&lt;/p&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt; &lt;strong&gt;Area and perimeter of Square&lt;/strong&gt;&lt;/p&gt;
+&lt;center&gt;
 &lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -487,7 +499,11 @@ A rectangle is a 2d shape which has four sides, where the opposite sides are equ
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Side&lt;/span&gt;&lt;sup&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;2&lt;/span&gt;&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;4(Side)&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/table&gt;</Area_of_2D>
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;A square has 4 sides of similar length which are at right angles to each other.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Explanation: &lt;/b&gt;Let the length of the side of a square be &apos;a&apos; units.&lt;/p&gt;
+&lt;p&gt; The area of the square = a² square units. The perimeter of the square = 4a units&lt;/p&gt;</Area_of_2D>
         <Properties xml:lang="en">&lt;p&gt;Some of the important properties of the square are as follows:&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;The &lt;a href=&quot;/wiki/Diagonal&quot; title=&quot;Diagonal&quot; target=&quot;_blank&quot;&gt;diagonals&lt;/a&gt; of a square &lt;a href=&quot;/wiki/Bisection&quot; title=&quot;Bisection&quot; target=&quot;_blank&quot;&gt;bisect&lt;/a&gt; each other and meet at 90°.&lt;/li&gt;
 &lt;li&gt;The diagonals of a square bisect its angles.&lt;/li&gt;
@@ -513,7 +529,8 @@ A square is a four-sided polygon (2d Shape), whose four sides are equal in lengt
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kb/ontologies/2021/11/its#Triangle">
         <rdf:type rdf:resource="http://www.semanticweb.org/kb/ontologies/2021/11/its#2D_Geometry"/>
-        <Area_of_2D xml:lang="en">&lt;p&gt; Area and perimeter of Triangle&lt;/p&gt;
+        <Area_of_2D xml:lang="en">&lt;p&gt; &lt;strong&gt;Area and perimeter of Triangle&lt;/strong&gt;&lt;/p&gt;
+&lt;center&gt;
 &lt;table class=&quot;table-bordered&quot;&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -527,7 +544,12 @@ A square is a four-sided polygon (2d Shape), whose four sides are equal in lengt
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;½ (Base x height)&lt;/span&gt;&lt;/td&gt;
 &lt;td&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Sum of three sides&lt;/span&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/table&gt;</Area_of_2D>
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;br&gt;
+&lt;p&gt;Let us find the area of a triangle using this formula.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Example: &lt;/b&gt;What is the area of a triangle with base &apos;b&apos; = 2 cm and height &apos;h&apos; = 4 cm?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; Using the formula: Area of a Triangle, A = 1/2 × b × h = 1/2 × 4 × 2 = 4 cm&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</Area_of_2D>
         <Properties xml:lang="en">&lt;p&gt;Some of the important properties of the triangle are as follows:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;The&lt;em&gt; &lt;/em&gt;triangle is a closed polygon that has three angles, three sides, and three vertices.&lt;/li&gt;

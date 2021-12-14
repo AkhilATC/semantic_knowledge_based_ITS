@@ -3,6 +3,7 @@ div.container{
     margin: 10 px;
     display:none;
     width: 100%;
+    justify-content:space-evenly;
 }
 
 div.white-bord {
@@ -19,12 +20,14 @@ div.white-bord {
         padding: 20px
     }
 div.scroll-content {
+  width:800px;
+  height:600px;
   background-color: lightblue;
   overflow-y: scroll;
 }
 .start-container{
 
-    background-color: purple;
+    background-color: #afeeee;
     padding: 30px;
     margin: 30px;
     display:flex;
@@ -40,7 +43,6 @@ div.scroll-content {
 
   border: 1px solid white;
   border-collapse: collapse;
-
   background-color: #228B22	;
 
 }
